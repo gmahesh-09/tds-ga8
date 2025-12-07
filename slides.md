@@ -3,6 +3,7 @@ marp: true
 theme: product-docs
 paginate: true
 footer: "Product Documentation | © 2025"
+Author: 24ds2000081@ds.study.iitm.ac.in  
 ---
 
 <style>
