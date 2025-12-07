@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Q4 Earnings – Interactive Tech Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- RevealJS core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" id="theme">
+
+  <!-- Code highlighting theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css">
+
+  <style>
+    .subtitle {
+      font-size: 0.6em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- Title slide -->
+    <section>
+      <h2>Quarterly Earnings – Interactive Tech Overview</h2>
+      <p class="subtitle">Technical Consultant, Financial Systems</p>
+      <p class="subtitle">24ds2000081@ds.study.iitm.ac.in</p>
+      <aside class="notes">
+        Introduce yourself, clarify your role as a technical consultant,
+        and explain that this deck demonstrates modern, interactive
+        presentation capabilities using RevealJS.
+      </aside>
+    </section>
+
+    <!-- Markdown slide (requirement: at least one slide written in Markdown) -->
+    <section data-markdown>
+      <textarea data-template>
+## Quarterly Highlights (Markdown Slide)
+
+- **Revenue Growth:** +8.4% YoY  
+- **Net Interest Margin:** Stable at 3.2%  
+- **Cost-to-Income Ratio:** Improved by 1.1%  
+- **Digital Transactions:** +27% YoY  
+
+> Key message: We are scaling *digitally* without sacrificing financial discipline.
+      </textarea>
+    </section>
+
+    <!-- Fragments / animated bullet reveal -->
+    <section>
+      <h3>Key Stakeholder Questions</h3>
+      <ul>
+        <li class="fragment fade-in">How resilient is our earnings profile?</li>
+        <li class="fragment fade-in">What drives quarter-on-quarter variance?</li>
+        <li class="fragment fade-in">How sensitive are we to interest rate changes?</li>
+        <li class="fragment fade-in">Is our tech stack ready for real-time reporting?</li>
+      </ul>
+      <aside class="notes">
+        Use fragments to control pacing. Pause briefly on each
+        bullet to explain how the subsequent slides will answer
+        these questions with data, code, and models.
+      </aside>
+    </section>
+
+    <!-- Code sample with syntax highlighting -->
+    <section>
+      <h3>Example: Earnings Decomposition in Python</h3>
+      <pre><code class="language-python">
+import pandas as pd
+
+df = pd.read_csv("q4_earnings.csv")
+
+df["core_earnings"] = (
+    df["net_interest_income"]
+    + df["fee_income"]
+    - df["operating_expenses"]
+)
+
+df["one_offs"] = df["reported_profit"] - df["core_earnings"]
+
+print(
+    df[["quarter", "reported_profit", "core_earnings", "one_offs"]]
+    .round(2)
+)
+      </code></pre>
+      <aside class="notes">
+        Explain how a simple decomposition like this helps
+        distinguish sustainable core earnings from one-off items,
+        which is critical for stakeholders evaluating quality of earnings.
+      </aside>
+    </section>
+
+    <!-- Mathematical equations (financial formulas) -->
+    <section>
+      <h3>Financial Metrics &amp; Valuation Formulas</h3>
+      <p>
+        Net Present Value (NPV) of future cash flows:
+      </p>
+      <p>
+        \( \displaystyle
+        \text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t}
+        \)
+      </p>
+      <p class="fragment">
+        Return on Equity (ROE):
+      </p>
+      <p class="fragment">
+        \( \displaystyle
+        \text{ROE} = \frac{\text{Net Income}}{\text{Average Shareholders' Equity}}
+        \)
+      </p>
+      <aside class="notes">
+        Briefly remind stakeholders how NPV and ROE are used.
+        Connect NPV to long-term project evaluation and ROE to
+        capital efficiency and shareholder value.
+      </aside>
+    </section>
+
+    <!-- Another slide with fragments + small code + notes -->
+    <section>
+      <h3>Interactive Scenario Analysis</h3>
+      <p class="fragment">Rate shock: +100 bps parallel shift</p>
+      <p class="fragment">Impact on Net Interest Income (NII)</p>
+      <pre class="fragment"><code class="language-javascript">
+// Simplified NII shock sensitivity (pseudo-code)
+const baseNII   = 10_000_000;
+const beta      = 0.35; // portfolio rate sensitivity
+const rateShock = 0.01; // 100 bps
+
+const shockedNII = baseNII * (1 + beta * rateShock);
+console.log(`Shocked NII: ${shockedNII.toFixed(0)}`);
+      </code></pre>
+      <aside class="notes">
+        Emphasize that the real model is more complex, but this
+        illustrates how we can codify assumptions and visualize
+        impacts live during the presentation.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- RevealJS core and plugins -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+    math: {
+      // KaTeX configuration
+      // You can use MathJax instead by changing the plugin + config
+      katexScript: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js',
+      katexStyles: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css'
+    }
+  });
+</script>
+</body>
+</html>
