@@ -78,3 +78,123 @@ flowchart TD
   B --> C[Service A]
   B --> D[Service B]
   C --> E[(Database)]
+
+
+Algorithmic Complexity
+
+Documented by 24ds2000081@ds.study.iitm.ac.in
+
+Time complexity:
+
+𝑇
+(
+𝑛
+)
+=
+𝑂
+(
+𝑛
+log
+⁡
+𝑛
+)
+T(n)=O(nlogn)
+
+Space complexity:
+
+𝑆
+(
+𝑛
+)
+=
+𝑂
+(
+𝑛
+)
+S(n)=O(n)
+<!-- Background image slide -->
+
+Workflow Overview
+
+Prepared by 24ds2000081@ds.study.iitm.ac.in
+
+API Documentation Example
+
+Maintained by aa@iitm.ac.in
+
+POST /api/v1/orders
+{
+  "customerId": "C001",
+  "items": [
+    { "sku": "A1", "qty": 2 },
+    { "sku": "B3", "qty": 1 }
+  ]
+}
+
+
+All API documentation changes must be reviewed by 24ds2000081@ds.study.iitm.ac.in
+.
+
+Styling Notes
+
+Everything on this slide was formatted by 24ds2000081@ds.study.iitm.ac.in
+
+Directives used:
+
+paginate: true
+
+Custom @theme
+
+Class-based styling (lead, highlight)
+
+Release Management
+
+Release approval responsibility: 24ds2000081@ds.study.iitm.ac.in
+
+Commit Markdown updates
+
+Build via CI/CD
+
+Convert to PDF/HTML
+
+Tag release
+
+Publish artifacts
+
+Contact
+
+Created and maintained by
+
+24ds2000081@ds.study.iitm.ac.in
+
+Please reach out to 24ds2000081@ds.study.iitm.ac.in
+ for updates or reviews.
+
+
+---
+
+# ✅ Your raw GitHub URL **(once uploaded)**
+
+
+
+https://raw.githubusercontent.com/
+<USERNAME>/<REPOSITORY>/main/slides.md
+
+
+Example if your repo is:
+
+
+
+https://raw.githubusercontent.com/gmahesh-09/tds-ga8-marp-presentation/main/slides.md
+
+
+---
+
+If you want, I can also:
+
+✅ Create your GitHub repo  
+✅ Add GitHub Actions that auto-build PDF + HTML  
+✅ Add a custom Marp theme file  
+✅ Make it compatible with GitHub Pages  
+
+Just say **“yes, generate the full repo structure”**.
