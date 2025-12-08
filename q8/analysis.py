@@ -1,6 +1,5 @@
 """
 Customer Retention Rate - 2024 Quarterly Analysis
-Author: 24ds2000081@ds.study.iitm.ac.in
 """
 
 import matplotlib.pyplot as plt
