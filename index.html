@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q4 2025 Earnings Report</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
     <style>
         .reveal h1, .reveal h2, .reveal h3 {
             text-transform: none;
@@ -49,11 +49,11 @@
             
             <!-- Title Slide -->
             <section>
-                <h1>Q4 2025 Earnings Report</h1>
-                <h3>Financial Performance & Strategic Outlook</h3>
-                <p class="contact-info">
+                <h1 class="fragment fade-in">Q4 2025 Earnings Report</h1>
+                <h3 class="fragment fade-in">Financial Performance & Strategic Outlook</h3>
+                <p class="contact-info fragment fade-in">
                     Prepared by: Technical Consulting Team<br>
-                    Email: <a href="24ds2000081@ds.study.iitm.ac.in">24ds2000081@ds.study.iitm.ac.in</a>
+                    Email: <a href="mailto:24ds2000081@ds.study.iitm.ac.in">24ds2000081@ds.study.iitm.ac.in</a>
                 </p>
                 <aside class="notes">
                     Welcome everyone to our Q4 2025 earnings presentation. Today we'll review our financial performance, key metrics, and strategic initiatives. The presentation should take approximately 20 minutes, with time for Q&A at the end.
@@ -61,26 +61,26 @@
             </section>
 
             <!-- Executive Summary (Markdown) -->
-            <section data-markdown>
-                <textarea data-template>
-                    ## Executive Summary
+            <section>
+                <h2>Executive Summary</h2>
+                <h3>Key Highlights</h3>
+                <ul>
+                    <li class="fragment fade-in"><strong>Revenue Growth:</strong> 23% YoY increase</li>
+                    <li class="fragment fade-in"><strong>Operating Margin:</strong> Expanded to 34.5%</li>
+                    <li class="fragment fade-in"><strong>Customer Acquisition:</strong> 2.3M new accounts</li>
+                    <li class="fragment fade-in"><strong>Digital Transformation:</strong> 89% digital adoption rate</li>
+                </ul>
+            </section>
 
-                    ### Key Highlights
-
-                    * **Revenue Growth**: 23% YoY increase <!-- .element: class="fragment fade-in" -->
-                    * **Operating Margin**: Expanded to 34.5% <!-- .element: class="fragment fade-in" -->
-                    * **Customer Acquisition**: 2.3M new accounts <!-- .element: class="fragment fade-in" -->
-                    * **Digital Transformation**: 89% digital adoption rate <!-- .element: class="fragment fade-in" -->
-
-                    ---
-
-                    ### Strategic Priorities
-
-                    1. Accelerate digital innovation <!-- .element: class="fragment fade-right" -->
-                    2. Expand market share in emerging segments <!-- .element: class="fragment fade-right" -->
-                    3. Optimize operational efficiency <!-- .element: class="fragment fade-right" -->
-                    4. Strengthen risk management framework <!-- .element: class="fragment fade-right" -->
-                </textarea>
+            <!-- Strategic Priorities -->
+            <section>
+                <h2>Strategic Priorities</h2>
+                <ol>
+                    <li class="fragment fade-right">Accelerate digital innovation</li>
+                    <li class="fragment fade-right">Expand market share in emerging segments</li>
+                    <li class="fragment fade-right">Optimize operational efficiency</li>
+                    <li class="fragment fade-right">Strengthen risk management framework</li>
+                </ol>
                 <aside class="notes">
                     This slide presents our Q4 highlights. Note the strong revenue growth driven by our digital initiatives. The operating margin expansion demonstrates our operational excellence. Be prepared to discuss the customer acquisition strategy in detail.
                 </aside>
@@ -88,12 +88,12 @@
 
             <!-- Financial Metrics with Fragments -->
             <section>
-                <h2>Financial Performance</h2>
-                <div class="metric-card fragment fade-in">
+                <h2 class="fragment fade-down">Financial Performance</h2>
+                <div class="metric-card fragment fade-in-then-semi-out">
                     <h3>Revenue: $4.8B</h3>
                     <p>↑ 23% YoY</p>
                 </div>
-                <div class="metric-card fragment fade-in">
+                <div class="metric-card fragment fade-in-then-semi-out">
                     <h3>Net Income: $1.2B</h3>
                     <p>↑ 31% YoY</p>
                 </div>
@@ -101,6 +101,9 @@
                     <h3>EPS: $3.45</h3>
                     <p>↑ 28% YoY</p>
                 </div>
+                <p class="fragment fade-up" style="margin-top: 2em; font-size: 0.9em; color: #42affa;">
+                    ⭐ All metrics exceeded analyst expectations
+                </p>
                 <aside class="notes">
                     Walk through each metric as it appears. Emphasize that earnings per share exceeded analyst expectations by $0.15. The strong net income growth reflects both revenue expansion and margin improvement.
                 </aside>
@@ -238,36 +241,61 @@ const router = new SmartOrderRouter(exchanges, riskConfig);
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/math/math.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
     
     <script>
-        Reveal.initialize({
-            hash: true,
-            transition: 'slide',
-            transitionSpeed: 'default',
-            controls: true,
-            progress: true,
-            center: true,
-            touch: true,
-            plugins: [ 
-                RevealMarkdown, 
-                RevealHighlight, 
-                RevealNotes,
-                RevealMath.KaTeX
-            ],
-            math: {
-                mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.min.js',
-                config: 'TeX-AMS_HTML-full',
-                TeX: {
-                    Macros: {
-                        R: '\\mathbb{R}',
-                        set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+        window.addEventListener('load', function() {
+            try {
+                Reveal.initialize({
+                    hash: true,
+                    transition: 'slide',
+                    transitionSpeed: 'default',
+                    controls: true,
+                    progress: true,
+                    center: true,
+                    touch: true,
+                    embedded: false,
+                    keyboard: true,
+                    overview: true,
+                    help: true,
+                    slideNumber: false,
+                    mouseWheel: false,
+                    hideAddressBar: true,
+                    previewLinks: false,
+                    plugins: [ 
+                        RevealMarkdown, 
+                        RevealHighlight, 
+                        RevealNotes,
+                        RevealMath.KaTeX
+                    ],
+                    math: {
+                        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+                        config: 'TeX-AMS_HTML-full'
                     }
-                }
+                }).then(() => {
+                    console.log('✅ RevealJS initialized successfully');
+                    
+                    // Add error handler for slide transitions
+                    Reveal.on('slidechanged', function(event) {
+                        console.log('Navigated to slide:', event.indexh);
+                    });
+                }).catch((error) => {
+                    console.error('❌ RevealJS initialization error:', error);
+                });
+            } catch (error) {
+                console.error('❌ Critical error during initialization:', error);
+            }
+        });
+        
+        // Global error handler
+        window.addEventListener('error', function(e) {
+            if (e.message === 'Script error.') {
+                e.preventDefault();
+                console.log('Caught and suppressed generic script error');
             }
         });
     </script>
