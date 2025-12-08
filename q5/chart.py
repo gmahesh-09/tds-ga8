@@ -1,6 +1,5 @@
 # chart.py
 # Author: 24ds2000081@ds.study.iitm.ac.in
-
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -8,60 +7,55 @@ import numpy as np
 from PIL import Image
 import io
 
-# -------------------------------------------------------
-# 1. Professional Seaborn Styling
-# -------------------------------------------------------
+np.random.seed(42)
+
+# -----------------------------
+# Synthetic Data
+# -----------------------------
+segments = ['Budget', 'Regular', 'Premium', 'VIP']
+data = []
+
+for segment in segments:
+    if segment == 'Budget':
+        amounts = np.random.normal(50, 15, 150)
+    elif segment == 'Regular':
+        amounts = np.random.normal(150, 30, 200)
+    elif segment == 'Premium':
+        amounts = np.random.normal(300, 50, 120)
+    else:  # VIP
+        amounts = np.random.normal(500, 100, 80)
+    amounts = np.clip(amounts, 0, None)
+    data.extend([[segment, amt] for amt in amounts])
+
+df = pd.DataFrame(data, columns=['Customer Segment', 'Purchase Amount'])
+
+# -----------------------------
+# Seaborn Style
+# -----------------------------
 sns.set_style("whitegrid")
 sns.set_context("talk")
 
-# -------------------------------------------------------
-# 2. Generate Realistic Synthetic Customer Engagement Data
-# -------------------------------------------------------
-np.random.seed(42)
+# -----------------------------
+# Create a larger figure for layout
+# -----------------------------
+fig, ax = plt.subplots(figsize=(8, 8))  # layout space
+sns.boxplot(x='Customer Segment', y='Purchase Amount', data=df, palette='Set2', ax=ax)
 
-data = {
-    "Time_on_Site": np.random.normal(5.5, 1.2, 500),
-    "Pages_Viewed": np.random.normal(9, 2.7, 500),
-    "Email_Clicks": np.random.normal(2.3, 1.0, 500),
-    "App_Usage": np.random.normal(11, 3.3, 500),
-    "Purchase_Frequency": np.random.normal(2.0, 0.6, 500),
-    "Customer_Satisfaction": np.random.normal(4.3, 0.5, 500),
-}
+ax.set_title("Purchase Amount Distribution by Customer Segment", fontsize=16, weight='bold')
+ax.set_xlabel("Customer Segment", fontsize=12)
+ax.set_ylabel("Purchase Amount ($)", fontsize=12)
 
-df = pd.DataFrame(data)
-corr = df.corr()
+plt.tight_layout()  # prevent clipping
 
-# -------------------------------------------------------
-# 3. Create a high-quality heatmap figure
-# -------------------------------------------------------
-fig = plt.figure(figsize=(8, 8), dpi=150)  # High DPI for crisp rendering
-
-sns.heatmap(
-    corr,
-    annot=True,
-    fmt=".2f",
-    cmap="coolwarm",
-    linewidths=0.5,
-    square=True,
-    cbar_kws={"shrink": 0.7}
-)
-
-plt.title("Customer Engagement Correlation Matrix", pad=20)
-
-# -------------------------------------------------------
-# 4. Render figure to memory buffer (PNG)
-# -------------------------------------------------------
+# -----------------------------
+# Render to PIL image at 512x512 pixels
+# -----------------------------
 buf = io.BytesIO()
-fig.savefig(buf, format="png", dpi=150, bbox_inches="tight")
+fig.savefig(buf, format='png', dpi=200)  # high dpi to preserve layout
 buf.seek(0)
-
-# -------------------------------------------------------
-# 5. Load into PIL and resize to EXACT 512×512
-# -------------------------------------------------------
 img = Image.open(buf)
 img = img.resize((512, 512), Image.LANCZOS)
-img.save("chart.png")
+img.save('chart.png')
 
 plt.close(fig)
-
-print("chart.png saved successfully (exact 512x512 pixels)")
+print("Chart saved as chart.png (exactly 512x512 pixels, text fully visible)")
