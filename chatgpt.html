@@ -1,0 +1,51 @@
+"""
+Employee Performance Visualization Script
+Author email: 24ds2000081@ds.study.iitm.ac.in
+"""
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import mpld3
+
+# ----------------------------------------------------
+# 1. Load the employee dataset
+# ----------------------------------------------------
+
+csv_data = """employee_id,department,region,performance_score,years_experience,satisfaction_rating
+EMP001,Operations,North America,66.06,12,4.1
+EMP002,R&D,Asia Pacific,77.92,8,3.6
+EMP003,HR,Middle East,61.57,7,3.5
+EMP004,IT,Latin America,75.83,9,3.3
+EMP005,R&D,North America,61.49,4,3.6
+"""
+
+# Convert CSV string to DataFrame
+from io import StringIO
+df = pd.read_csv(StringIO(csv_data))
+
+# ----------------------------------------------------
+# 2. Calculate HR department frequency count
+# ----------------------------------------------------
+
+hr_count = (df["department"] == "HR").sum()
+print("Number of employees in HR:", hr_count)
+
+# ----------------------------------------------------
+# 3. Create histogram of department distribution
+# ----------------------------------------------------
+
+plt.figure(figsize=(8, 5))
+df["department"].value_counts().plot(kind="bar", color="skyblue")
+plt.title("Department Distribution of Employees")
+plt.xlabel("Department")
+plt.ylabel("Count")
+plt.tight_layout()
+
+# ----------------------------------------------------
+# 4. Save visualization as an HTML file
+# ----------------------------------------------------
+
+html_output = "employee_department_histogram.html"
+mpld3.save_html(plt.gcf(), html_output)
+
+print(f"HTML visualization saved as: {html_output}")
