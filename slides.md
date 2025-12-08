@@ -4,7 +4,7 @@ theme: product-docs
 paginate: true
 footer: "Product Documentation | © 2025 | 24ds2000081@ds.study.iitm.ac.in"
 description: "Marp presentation maintained by 24ds2000081@ds.study.iitm.ac.in"
-author: "24ds2000081@ds.study.iitm.ac.in"
+Email: "24ds2000081@ds.study.iitm.ac.in"
 ---
 
 <style>
@@ -52,25 +52,22 @@ This presentation demonstrates:
 - Page numbers  
 - Math equations  
 - Version-controlled documentation  
-- All authored by **24ds2000081@ds.study.iitm.ac.in**
+- email: 24ds2000081@ds.study.iitm.ac.in
 
 ---
 
 <!-- _class: highlight -->
 
 # **Documentation Goals**
-Prepared by **24ds2000081@ds.study.iitm.ac.in**
+Email 24ds2000081@ds.study.iitm.ac.in
 
 - Ensure clarity  
 - Improve maintainability  
 - Support multiple formats  
 - Increase engineering adoption  
-- Traceability to **24ds2000081@ds.study.iitm.ac.in**
-
 ---
 
 # **System Architecture**
-Diagram authored by **24ds2000081@ds.study.iitm.ac.in**
 
 ```mermaid
 flowchart TD
@@ -116,8 +113,6 @@ S(n)=O(n)
 
 Workflow Overview
 
-Prepared by 24ds2000081@ds.study.iitm.ac.in
-
 API Documentation Example
 
 Maintained by aa@iitm.ac.in
@@ -132,12 +127,10 @@ POST /api/v1/orders
 }
 
 
-All API documentation changes must be reviewed by 24ds2000081@ds.study.iitm.ac.in
 .
 
 Styling Notes
 
-Everything on this slide was formatted by 24ds2000081@ds.study.iitm.ac.in
 
 Directives used:
 
@@ -165,36 +158,6 @@ Contact
 
 Created and maintained by
 
-24ds2000081@ds.study.iitm.ac.in
-
-Please reach out to 24ds2000081@ds.study.iitm.ac.in
- for updates or reviews.
-
+email: 24ds2000081@ds.study.iitm.ac.in
 
 ---
-
-# ✅ Your raw GitHub URL **(once uploaded)**
-
-
-
-https://raw.githubusercontent.com/
-<USERNAME>/<REPOSITORY>/main/slides.md
-
-
-Example if your repo is:
-
-
-
-https://raw.githubusercontent.com/gmahesh-09/tds-ga8-marp-presentation/main/slides.md
-
-
----
-
-If you want, I can also:
-
-✅ Create your GitHub repo  
-✅ Add GitHub Actions that auto-build PDF + HTML  
-✅ Add a custom Marp theme file  
-✅ Make it compatible with GitHub Pages  
-
-Just say **“yes, generate the full repo structure”**.
