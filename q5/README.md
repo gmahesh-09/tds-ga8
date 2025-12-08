@@ -1,5 +1,9 @@
-Customer Engagement Correlation Heatmap
+hq-seaborn-data-visualization
+This repository contains a professional Seaborn boxplot visualization showing purchase amount distributions across customer segments.
 
-This repository contains a Seaborn-based correlation matrix heatmap.
+Author: 24ds2000081@ds.study.iitm.ac.in
 
-24ds2000081@ds.study.iitm.ac.in
+Files:
+
+chart.py: Python script to generate the Seaborn boxplot.
+chart.png: Generated chart (512x512 pixels).
