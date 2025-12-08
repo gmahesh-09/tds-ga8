@@ -3,6 +3,12 @@
 Author: 24ds2000081@ds.study.iitm.ac.in
 
 This repository contains code and visualizations analyzing the 2024 quarterly customer retention rates and comparing them to the industry target benchmark.
+New content has been added for PR
+
+# 2024 Customer Retention Analysis
+
+This pull request contains a complete data analysis of the 2024 quarterly customer retention rates.  
+The analysis includes the processed dataset
 
 ---
 
