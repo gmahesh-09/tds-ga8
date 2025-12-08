@@ -1,61 +1,53 @@
-# chart.py
-# Author: 24ds2000081@ds.study.iitm.ac.in
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-from PIL import Image
-import io
 
+# -----------------------------
+# Generate synthetic customer engagement data
+# -----------------------------
 np.random.seed(42)
 
-# -----------------------------
-# Synthetic Data
-# -----------------------------
-segments = ['Budget', 'Regular', 'Premium', 'VIP']
-data = []
+data = {
+    "Time_on_Site": np.random.normal(5.5, 1.2, 400),
+    "Pages_Viewed": np.random.normal(9, 2.5, 400),
+    "Email_Clicks": np.random.normal(2.3, 1.0, 400),
+    "App_Usage": np.random.normal(10.5, 3.0, 400),
+    "Purchase_Frequency": np.random.normal(2.0, 0.6, 400),
+    "Customer_Satisfaction": np.random.normal(4.2, 0.4, 400)
+}
 
-for segment in segments:
-    if segment == 'Budget':
-        amounts = np.random.normal(50, 15, 150)
-    elif segment == 'Regular':
-        amounts = np.random.normal(150, 30, 200)
-    elif segment == 'Premium':
-        amounts = np.random.normal(300, 50, 120)
-    else:  # VIP
-        amounts = np.random.normal(500, 100, 80)
-    amounts = np.clip(amounts, 0, None)
-    data.extend([[segment, amt] for amt in amounts])
-
-df = pd.DataFrame(data, columns=['Customer Segment', 'Purchase Amount'])
+df = pd.DataFrame(data)
+corr = df.corr()
 
 # -----------------------------
-# Seaborn Style
+# Professional Seaborn styling
 # -----------------------------
 sns.set_style("whitegrid")
 sns.set_context("talk")
 
 # -----------------------------
-# Create a larger figure for layout
+# Create EXACT 512×512 heatmap
 # -----------------------------
-fig, ax = plt.subplots(figsize=(8, 8))  # layout space
-sns.boxplot(x='Customer Segment', y='Purchase Amount', data=df, palette='Set2', ax=ax)
+plt.figure(figsize=(8, 8))   # 8 inches × 64 dpi = 512 pixels
 
-ax.set_title("Purchase Amount Distribution by Customer Segment", fontsize=16, weight='bold')
-ax.set_xlabel("Customer Segment", fontsize=12)
-ax.set_ylabel("Purchase Amount ($)", fontsize=12)
+heatmap = sns.heatmap(
+    corr,
+    annot=True,
+    fmt=".2f",
+    cmap="coolwarm",
+    linewidths=0.5,
+    square=True,
+    cbar_kws={"shrink": 0.7}
+)
 
-plt.tight_layout()  # prevent clipping
+plt.title("Customer Engagement Correlation Heatmap", pad=20)
+plt.tight_layout()
 
 # -----------------------------
-# Render to PIL image at 512x512 pixels
+# Save as EXACT 512x512 PNG
 # -----------------------------
-buf = io.BytesIO()
-fig.savefig(buf, format='png', dpi=200)  # high dpi to preserve layout
-buf.seek(0)
-img = Image.open(buf)
-img = img.resize((512, 512), Image.LANCZOS)
-img.save('chart.png')
+plt.savefig("chart.png", dpi=64, bbox_inches="tight")
+plt.close()
 
-plt.close(fig)
-print("Chart saved as chart.png (exactly 512x512 pixels, text fully visible)")
+print("chart.png saved successfully (512x512 pixels)")
