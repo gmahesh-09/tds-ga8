@@ -1,38 +1,40 @@
 # chart.py
-# Author contact: 24ds2000081@ds.study.iitm.ac.in
+# Author: 24ds2000081@ds.study.iitm.ac.in
 
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+from PIL import Image
+import io
 
 # -------------------------------------------------------
-# 1. Seaborn styling for professional, publication-ready look
+# 1. Professional Seaborn Styling
 # -------------------------------------------------------
 sns.set_style("whitegrid")
 sns.set_context("talk")
 
 # -------------------------------------------------------
-# 2. Generate realistic synthetic customer engagement data
+# 2. Generate Realistic Synthetic Customer Engagement Data
 # -------------------------------------------------------
 np.random.seed(42)
 
 data = {
-    "Time_on_Site": np.random.normal(5.5, 1.2, 500),      # minutes per visit
-    "Pages_Viewed": np.random.normal(9, 2.8, 500),
-    "Email_Clicks": np.random.normal(2.2, 1.1, 500),
-    "App_Usage": np.random.normal(11, 3.5, 500),
-    "Purchase_Frequency": np.random.normal(2.0, 0.7, 500),
-    "Customer_Satisfaction": np.random.normal(4.3, 0.4, 500),
+    "Time_on_Site": np.random.normal(5.5, 1.2, 500),
+    "Pages_Viewed": np.random.normal(9, 2.7, 500),
+    "Email_Clicks": np.random.normal(2.3, 1.0, 500),
+    "App_Usage": np.random.normal(11, 3.3, 500),
+    "Purchase_Frequency": np.random.normal(2.0, 0.6, 500),
+    "Customer_Satisfaction": np.random.normal(4.3, 0.5, 500),
 }
 
 df = pd.DataFrame(data)
 corr = df.corr()
 
 # -------------------------------------------------------
-# 3. Create EXACT 512x512 heatmap (NO RESIZING)
+# 3. Create a high-quality heatmap figure
 # -------------------------------------------------------
-fig = plt.figure(figsize=(8, 8), dpi=64)   # 8 inches * 64 dpi = 512 pixels
+fig = plt.figure(figsize=(8, 8), dpi=150)  # High DPI for crisp rendering
 
 sns.heatmap(
     corr,
@@ -47,9 +49,19 @@ sns.heatmap(
 plt.title("Customer Engagement Correlation Matrix", pad=20)
 
 # -------------------------------------------------------
-# 4. Save as EXACT 512x512 PNG
+# 4. Render figure to memory buffer (PNG)
 # -------------------------------------------------------
-fig.savefig("chart.png", dpi=64, bbox_inches="tight")
+buf = io.BytesIO()
+fig.savefig(buf, format="png", dpi=150, bbox_inches="tight")
+buf.seek(0)
+
+# -------------------------------------------------------
+# 5. Load into PIL and resize to EXACT 512×512
+# -------------------------------------------------------
+img = Image.open(buf)
+img = img.resize((512, 512), Image.LANCZOS)
+img.save("chart.png")
+
 plt.close(fig)
 
-print("chart.png generated successfully (512x512 pixels)")
+print("chart.png saved successfully (exact 512x512 pixels)")
