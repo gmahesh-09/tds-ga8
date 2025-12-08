@@ -1,6 +1,6 @@
 # Customer Retention Rate - 2024 Quarterly Analysis
 
-Author: 24ds2000081@ds.study.iitm.ac.in
+Email: 24ds2000081@ds.study.iitm.ac.in
 
 This repository contains code and visualizations analyzing the 2024 quarterly customer retention rates and comparing them to the industry target benchmark.
 
